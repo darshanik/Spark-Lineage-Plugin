@@ -1,2 +1,10 @@
-# Spark-Lineage-Transform
-This repository has source code of spark-lineage-transform app that can parse and emit lineage payload to Apache Atlas
+# Overview
+This plugin Collects and Transforms the facets emitted by Open Lineage Spark Listener into OpenMetadata Compatible payload definition that creates/updates the lineage.
+# Features
+* Container-To-Table Lineage
+* Table-to-Table Lineage
+* Column-Level Lineage
+# Limitations
+* Generates Lineage in OpenMetadata for only spark jobs. 
+
+
