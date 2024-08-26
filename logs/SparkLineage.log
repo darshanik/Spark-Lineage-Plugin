@@ -1,0 +1,168 @@
+2024-08-25 11:44:22,730 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 11:44:22,732 [33mPress CTRL+C to quit[0m
+2024-08-25 11:44:29,612 ==> API Initiated <==
+2024-08-25 11:44:29,612 ==>Processing event message
+2024-08-25 11:44:29,612 OPENMETADATA_CONTAINER_SERVICE environment variable not found
+2024-08-25 11:44:29,612 Exception on /event_message [POST]
+Traceback (most recent call last):
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'apiProcessor' did not return a valid response. The function either returned None or ended without a return statement.
+2024-08-25 11:44:29,636 192.168.0.202 - - [25/Aug/2024 11:44:29] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-25 11:46:52,488 ==> API Initiated <==
+2024-08-25 11:46:52,488 ==>Processing event message
+2024-08-25 11:46:52,488 OPENMETADATA_CONTAINER_SERVICE environment variable not found
+2024-08-25 11:46:52,488 Exception on /event_message [POST]
+Traceback (most recent call last):
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'apiProcessor' did not return a valid response. The function either returned None or ended without a return statement.
+2024-08-25 11:46:52,488 192.168.0.202 - - [25/Aug/2024 11:46:52] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-25 11:47:07,629 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 11:47:07,629 [33mPress CTRL+C to quit[0m
+2024-08-25 11:47:11,424 ==> API Initiated <==
+2024-08-25 11:47:11,424 ==>Processing event message
+2024-08-25 11:47:11,424 OPENMETADATA_CONTAINER_SERVICE environment variable not found
+2024-08-25 11:47:11,424 Exception on /event_message [POST]
+Traceback (most recent call last):
+  File "c:\Users\Darshanik\OneDrive - University of Texas at Arlington\Desktop\Spark-Lineage-Transform\src\main.py", line 164, in apiProcessor
+    output_entity_id, type_def = transform(facet)
+                                 ^^^^^^^^^^^^^^^^
+  File "c:\Users\Darshanik\OneDrive - University of Texas at Arlington\Desktop\Spark-Lineage-Transform\src\main.py", line 81, in transform
+    output_entity = mapper[mapper_key](items)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Darshanik\OneDrive - University of Texas at Arlington\Desktop\Spark-Lineage-Transform\src\entities\table.py", line 10, in __init__
+    super().__init__()
+  File "c:\Users\Darshanik\OneDrive - University of Texas at Arlington\Desktop\Spark-Lineage-Transform\src\entities\base.py", line 38, in __init__
+    self.openmetadata_container_service = get_env_var("OPENMETADATA_CONTAINER_SERVICE")
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Darshanik\OneDrive - University of Texas at Arlington\Desktop\Spark-Lineage-Transform\src\entities\utils.py", line 39, in get_env_var
+    raise ValueError(f"{var_name} environment variable not found")
+ValueError: OPENMETADATA_CONTAINER_SERVICE environment variable not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_restful\__init__.py", line 298, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Darshanik\OneDrive - University of Texas at Arlington\Desktop\Spark-Lineage-Transform\src\main.py", line 175, in apiProcessor
+    return jsonify({"Error": e})
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\json\__init__.py", line 342, in jsonify
+    return current_app.json.response(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\json\provider.py", line 309, in response
+    f"{self.dumps(obj, **dump_args)}\n", mimetype=mimetype
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\json\provider.py", line 230, in dumps
+    return json.dumps(obj, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\json\provider.py", line 122, in _default
+    raise TypeError(f"Object of type {type(o).__name__} is not JSON serializable")
+TypeError: Object of type ValueError is not JSON serializable
+2024-08-25 11:47:11,594 192.168.0.202 - - [25/Aug/2024 11:47:11] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-25 11:47:55,945 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 11:47:55,945 [33mPress CTRL+C to quit[0m
+2024-08-25 11:48:01,517 ==> API Initiated <==
+2024-08-25 11:48:01,517 ==>Processing event message
+2024-08-25 11:48:01,517 OPENMETADATA_CONTAINER_SERVICE environment variable not found
+2024-08-25 11:48:01,517 Exception on /event_message [POST]
+Traceback (most recent call last):
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2170, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a ValueError.
+2024-08-25 11:48:01,517 192.168.0.202 - - [25/Aug/2024 11:48:01] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-25 11:48:34,105 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 11:48:34,105 [33mPress CTRL+C to quit[0m
+2024-08-25 11:48:39,199 ==> API Initiated <==
+2024-08-25 11:48:39,199 ==>Processing event message
+2024-08-25 11:48:39,199 OPENMETADATA_CONTAINER_SERVICE environment variable not found
+2024-08-25 11:48:39,199 192.168.0.202 - - [25/Aug/2024 11:48:39] "POST /event_message HTTP/1.1" 200 -
+2024-08-25 12:11:50,126 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 12:11:50,126 [33mPress CTRL+C to quit[0m
+2024-08-25 12:11:57,326 ==> API Initiated <==
+2024-08-25 12:11:57,326 ==>Processing event message
+2024-08-25 12:11:57,326 BaseEntity.get_from_openmetadata_api() missing 1 required positional argument: 'parameters'
+2024-08-25 12:11:57,326 192.168.0.202 - - [25/Aug/2024 12:11:57] "POST /event_message HTTP/1.1" 200 -
+2024-08-25 15:46:29,142 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 15:46:29,142 [33mPress CTRL+C to quit[0m
+2024-08-25 15:47:37,476 ==> API Initiated <==
+2024-08-25 15:47:37,476 ==>Processing event message
+2024-08-25 15:47:37,626 cannot unpack non-iterable NoneType object
+2024-08-25 15:47:37,626 192.168.0.202 - - [25/Aug/2024 15:47:37] "POST /event_message HTTP/1.1" 200 -
+2024-08-25 20:03:47,393 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-25 20:03:47,394 [33mPress CTRL+C to quit[0m
+2024-08-25 20:03:56,985 ==> API Initiated <==
+2024-08-25 20:03:56,985 ==>Processing event message
+2024-08-25 20:03:56,985 OPENMETADATA_SPARK_PIPELINE_SERVICE environment variable not found
+2024-08-25 20:03:56,985 192.168.0.202 - - [25/Aug/2024 20:03:56] "POST /event_message HTTP/1.1" 200 -

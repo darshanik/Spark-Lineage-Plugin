@@ -1,0 +1,72 @@
+2024-08-18 13:52:38,913 ==> API Initiated <==
+2024-08-18 14:24:04,462 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-18 14:24:04,462 [33mPress CTRL+C to quit[0m
+2024-08-18 14:24:04,470  * Restarting with stat
+2024-08-18 14:24:04,903  * Debugger is active!
+2024-08-18 14:24:04,914  * Debugger PIN: 543-624-317
+2024-08-18 14:29:10,572 127.0.0.1 - - [18/Aug/2024 14:29:10] "[33mPOST / HTTP/1.1[0m" 404 -
+2024-08-18 14:29:29,251 192.168.0.202 - - [18/Aug/2024 14:29:29] "[33mPOST / HTTP/1.1[0m" 404 -
+2024-08-18 14:30:25,890 ==> API Initiated <==
+2024-08-18 14:30:25,890 ==>Processing event message
+2024-08-18 14:30:25,938 192.168.0.202 - - [18/Aug/2024 14:30:25] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-18 14:35:20,665 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-18 14:35:20,665 [33mPress CTRL+C to quit[0m
+2024-08-18 14:35:20,674  * Restarting with stat
+2024-08-18 14:35:21,100  * Debugger is active!
+2024-08-18 14:35:21,117  * Debugger PIN: 543-624-317
+2024-08-18 14:35:29,537 ==> API Initiated <==
+2024-08-18 14:35:29,537 ==>Processing event message
+2024-08-18 14:35:29,546 192.168.0.202 - - [18/Aug/2024 14:35:29] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-18 14:38:21,293 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-18 14:38:21,294 [33mPress CTRL+C to quit[0m
+2024-08-18 14:38:21,298  * Restarting with stat
+2024-08-18 14:38:21,669  * Debugger is active!
+2024-08-18 14:38:21,677  * Debugger PIN: 543-624-317
+2024-08-18 14:38:26,753 ==> API Initiated <==
+2024-08-18 14:38:26,753 ==>Processing event message
+2024-08-18 14:38:26,753 name 'Container' is not defined
+2024-08-18 14:38:26,768 192.168.0.202 - - [18/Aug/2024 14:38:26] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-18 14:55:23,355 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-18 14:55:23,355 [33mPress CTRL+C to quit[0m
+2024-08-18 14:55:23,359  * Restarting with stat
+2024-08-18 14:55:23,711  * Debugger is active!
+2024-08-18 14:55:23,728  * Debugger PIN: 543-624-317
+2024-08-18 14:55:33,367 ==> API Initiated <==
+2024-08-18 14:55:33,367 ==>Processing event message
+2024-08-18 14:55:33,367 cannot unpack non-iterable NoneType object
+2024-08-18 14:55:33,382 192.168.0.202 - - [18/Aug/2024 14:55:33] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -
+2024-08-18 14:58:53,134 [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.0.202:8080
+2024-08-18 14:58:53,134 [33mPress CTRL+C to quit[0m
+2024-08-18 14:58:58,290 ==> API Initiated <==
+2024-08-18 14:58:58,290 ==>Processing event message
+2024-08-18 14:58:58,290 cannot unpack non-iterable NoneType object
+2024-08-18 14:58:58,290 Exception on /event_message [POST]
+Traceback (most recent call last):
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Darshanik\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'apiProcessor' did not return a valid response. The function either returned None or ended without a return statement.
+2024-08-18 14:58:58,290 192.168.0.202 - - [18/Aug/2024 14:58:58] "[35m[1mPOST /event_message HTTP/1.1[0m" 500 -

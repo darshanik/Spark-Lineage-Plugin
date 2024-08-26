@@ -5,7 +5,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # change directory
-WORKDIR /data
+WORKDIR /spark-lineage
 
 # copy only requirements for installation
 COPY requirements.txt .

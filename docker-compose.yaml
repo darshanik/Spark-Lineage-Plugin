@@ -1,0 +1,110 @@
+version: "3.9"
+volumes:
+  spark-lineage-plugin: 
+services:
+  spark-lineage-service:
+    container_name: spark-lineage-plugin
+    image: "spark-lineage-plugin:v1.0.0" 
+    platform: linux/amd64
+    command: --python main.py
+    working_dir: /spark-lineage
+    restart: always
+    environment:
+      # Provide the hostname of Open Metadata with port 
+      # example: openmetadata:8585
+      OPENMETADATA_HOST : "hostname:port"
+
+      # Provide the type of seperators to create entities unique qualifiedName
+      SPARK_LINEAGE_PLUGIN_SEPERATOR : "@"
+      SPARK_LINEAGE_PLUGIN_SLASH_SEPERATOR : "/"
+      SPARK_LINEAGE_PLUGIN_UNDERSCORE_SEPERATOR : "_"
+      SPARK_LINEAGE_PLUGIN_DOT_SEPERATOR : "."
+      SPARK_LINEAGE_PLUGIN_CLUSTER : ""
+
+      # ----------OpenMetadata API endpoint parameters section----------
+      # Below are default parameters and it is recommended not to change them unless you need to
+      OPENMETADATA_SPARK_LINEAGE_PARAMETERS : "lineage"
+      OPENMETADATA_SPARK_PIPELINE_PARAMETERS : "pipelines"
+      OPENMETADATA_TABLE_PARAMETERS : "tables"
+      OPENMETADATA_CONTAINER_PARAMETERS : "containers"
+      OPENMETADATA_TABLE_TYPENAME : "table"
+      OPENMETADATA_CONTAINER_TYPENAME : "container"
+
+      # ----------Kafka Configuration----------
+      OPEN_LINEAGE_KAFKA_TOPIC_NAME : "SPARK_LINEAGE_PLUGIN"
+      SPARK_LINEAGE_PLUGIN_USE_KAFKA_CONN: "TRUE"
+      SPARK_LINEAGE_PLUGIN_READ_FROM_KAFKA: "FALSE"
+      KAFKA_SASL_USERNAME: 'xxxx'
+      KAFKA_SASL_PASSWORD: 'yyyy'
+      # provide your kafka Server instance with port number
+      # Example: kafka.confluent.apps.dev_env.corp:443 
+      KAFKA_BOOTSTRAP_SERVERS : "kafka.confluent.apps.bootstrap.dev_env.corp:443"
+      # Provide the type of Security protocol to use for connecting to you kafka server
+      # Default is SASL_SSL
+      KAFKA_SECURITY_PROTOCOL : "SASL_SSL"
+      # Provide the certificate location to connect to your kafka server
+      # Example: "/etc/cert/mycacert.ca"
+      # Default: None
+      KAFKA_SSL_CA_LOCATION: "path/to/your_ca_cert"
+      # Provide SASL_MECHANISM type
+      # Default is PLAIN
+      KAFKA_SASL_MECHANISMS: "PLAIN"
+      # Provide consumer group Id name for spark lineage transform to subscribe
+      # Default: spark-lineage-transform
+      KAFKA_GROUP_ID : "spark-lineage-plugin"
+      # Specifiy the Offset to consume messages
+      # latest: spark lineage transform will consume the latest messages from topic
+      # earliest: spark lineage transform will consume the oldest or earliest message in topic
+      # Default: latest(recommended)
+      KAFKA_AUTO_OFFSET_RESET : "latest"
+
+      # ----------Archive Configurations to store event messages----------
+      SPARK_LINEAGE_PLUGIN_ARCHIVE_EVENT_MESSAGES : "FALSE"
+      SPARK_LINEAGE_PLUGIN_ARCHIVE_EVENT_MESSAGES_DIRECTORY : "archives"
+      SPARK_LINEAGE_PLUGIN_INTERACT_WITH_OPENMETADATA : "TRUE"
+
+      # ----------Log Configurations and Log Retention Configurations----------
+      SPARK_LINEAGE_PLUGIN_LOG_PATH: "logs/SparkLineage.log"
+      SPARK_LINEAGE_PLUGIN_LOG_INTERVAL: "1"
+      SPARK_LINEAGE_PLUGIN_LOG_BACKUP_COUNT: "5"
+      SPARK_LINEAGE_PLUGIN_LOG_INTERVAL_TYPE: "D"
+      SPARK_LINEAGE_PLUGIN_LOG_LEVEL: "INFO"
+      OPENMETADATA_TOKEN : 'xxxxx'
+
+      # ----------OpenMetadata File Storage Service Configurations----------
+
+      OPENMETADATA_CONTAINER_SERVICE: "Default_Container_Service"
+
+      # ----------OpenMetadata Lineage and Pipeline Service Configurations----------
+
+      OPENMETADATA_SPARK_PIPELINE_SERVICE : "Default_Spark_Pipeline_Service"
+
+      # ----------OpenMetadata Table and Database Service Configurations---------- 
+      OPENMETADATA_HIVE_SERVICE: "Default_Hive_Service"
+      OPENMETADATA_TRINO_SERVICE: "Default_Trino_Service"
+      OPENMETADATA_PRESTO_SERVICE: "Default_Presto_Service"
+      OPENMETADATA_MYSQL_SERVICE: "Default_Mysql_Service"
+      OPENMETADATA_ORACLE_SERVICE: "Default_Oracle_Service"
+      OPENMETADATA_POSTGRESQL_SERVICE: "Default_PostgreSQL_Service"
+      OPENMETADATA_SNOWFLAKE_SERVICE: "Default_Snowflake_Service"
+      OPENMETADATA_ATHENA_SERVICE: "Default_Athena_Service"
+      OPENMETADATA_AZURESQL_SERVICE: "Default_Azuresql_Service"
+      OPENMETADATA_BIGQUERY_SERVICE: "Default_Bigquery_Service"
+      OPENMETADATA_DATABRICKS_SERVICE: "Default_Databricks_Service"
+      OPENMETADATA_DB2_SERVICE: "Default_Db2_Service"
+      OPENMETADATA_DATALAKE_SERVICE: "Default_Datalake_Service"
+      OPENMETADATA_MONGODB_SERVICE: "Default_Mongodb_Service"
+      OPENMETADATA_MARIADB_SERVICE: "Default_Mariadb_Service"
+
+
+    expose:
+      - 8080
+    ports: 
+      - "8080:8080"
+    volumes:
+      - /spark-lineage/logs
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: '2G'
